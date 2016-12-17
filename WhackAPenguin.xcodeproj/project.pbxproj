@@ -29,6 +29,7 @@
 		5A9922571E04B42000387EA9 /* whackMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A9922491E04B42000387EA9 /* whackMask.png */; };
 		5A9922581E04B42000387EA9 /* whackMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A99224A1E04B42000387EA9 /* whackMask@2x.png */; };
 		5A99225A1E04B42500387EA9 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9922591E04B42500387EA9 /* Helper.swift */; };
+		5A99225C1E0602E500387EA9 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A99225B1E0602E500387EA9 /* WhackSlot.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		5A9922491E04B42000387EA9 /* whackMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whackMask.png; sourceTree = "<group>"; };
 		5A99224A1E04B42000387EA9 /* whackMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whackMask@2x.png"; sourceTree = "<group>"; };
 		5A9922591E04B42500387EA9 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Content/Helper.swift; sourceTree = "<group>"; };
+		5A99225B1E0602E500387EA9 /* WhackSlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				5A9922591E04B42500387EA9 /* Helper.swift */,
 				5A9922261E04B32600387EA9 /* GameScene.sks */,
 				5A99222A1E04B32600387EA9 /* GameScene.swift */,
+				5A99225B1E0602E500387EA9 /* WhackSlot.swift */,
 				5A99223C1E04B42000387EA9 /* Content */,
 				5A99222C1E04B32600387EA9 /* GameViewController.swift */,
 				5A99222E1E04B32600387EA9 /* Main.storyboard */,
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A99222B1E04B32600387EA9 /* GameScene.swift in Sources */,
+				5A99225C1E0602E500387EA9 /* WhackSlot.swift in Sources */,
 				5A99222D1E04B32600387EA9 /* GameViewController.swift in Sources */,
 				5A9922251E04B32600387EA9 /* AppDelegate.swift in Sources */,
 				5A99225A1E04B42500387EA9 /* Helper.swift in Sources */,
@@ -339,6 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L4U489Q2PR;
 				INFOPLIST_FILE = WhackAPenguin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.noahpatterson.WhackAPenguin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,6 +357,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = L4U489Q2PR;
 				INFOPLIST_FILE = WhackAPenguin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.noahpatterson.WhackAPenguin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
