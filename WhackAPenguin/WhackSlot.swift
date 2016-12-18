@@ -13,7 +13,14 @@ class WhackSlot: SKNode {
     
     var charNode: SKSpriteNode!
     var isVisible = false
-    var isHit     = false
+    var isHit: Bool  = false {
+        didSet {
+            if isHit == true {
+                hide()
+                isVisible = false
+            }
+        }
+    }
 
     func configure(at position: CGPoint) {
         self.position = position

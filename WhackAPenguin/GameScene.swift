@@ -49,7 +49,24 @@ class GameScene: SKScene {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        if let touch = touches.first {
+            let location    = touch.location(in: self)
+            let tappedNodes = nodes(at: location)
+            
+            for node in tappedNodes {
+                if node.name == "charFriend" {
+                    score += 1
+                    let whackSlot = node.parent!.parent as! WhackSlot
+                    whackSlot.isHit = true
+                } else if node.name == "charEnemy" {
+                    score -= 1
+                    let whackSlot = node.parent!.parent as! WhackSlot
+                    whackSlot.isHit = true
+                }
+                
+            }
+            
+        }
     }
     
     func createSlot(at position: CGPoint) {
