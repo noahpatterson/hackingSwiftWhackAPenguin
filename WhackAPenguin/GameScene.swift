@@ -12,6 +12,8 @@ import GameplayKit
 class GameScene: SKScene {
 
     var gameScoreLabel: SKLabelNode!
+    var gameOver: SKSpriteNode?
+    var playAgainLabel: SKLabelNode?
     var slots = [WhackSlot]()
     var popupTime = 0.85
     var score: Int = 0 {
@@ -55,7 +57,7 @@ class GameScene: SKScene {
             let tappedNodes = nodes(at: location)
             
             for node in tappedNodes {
-                if node.name == "charFriend" {
+                if node.name == "charEnemy" {
                   let whackSlot = node.parent!.parent as! WhackSlot
                     if !whackSlot.isVisible && whackSlot.isHit { continue }
                     
@@ -63,7 +65,7 @@ class GameScene: SKScene {
                     score -= 5
                     
                     run(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion: false))
-                } else if node.name == "charEnemy" {
+                } else if node.name == "charFriend" {
                     let whackSlot = node.parent!.parent as! WhackSlot
                     if !whackSlot.isVisible && whackSlot.isHit { continue }
                     
@@ -74,6 +76,8 @@ class GameScene: SKScene {
                     score += 1
                     
                     run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
+                } else if node.name == "playAgainLabel" {
+                    playAgain()
                 }
             }
         }
@@ -94,10 +98,25 @@ class GameScene: SKScene {
                 slot.hide()
             }
             
-            let gameOver = SKSpriteNode(imageNamed: "gameOver")
-            gameOver.position = CGPoint(x: 512, y: 385)
-            gameOver.zPosition = 1
-            addChild(gameOver)
+            if gameOver == nil {
+                gameOver = SKSpriteNode(imageNamed: "gameOver")
+                playAgainLabel = SKLabelNode(fontNamed: "Chalkduster")
+                
+                gameOver!.position = CGPoint(x: 512, y: 385)
+                gameOver!.zPosition = 1
+                addChild(gameOver!)
+                
+                playAgainLabel!.text = "Play Again?"
+                playAgainLabel!.position = CGPoint(x: 512, y: 300)
+                playAgainLabel!.zPosition = 1
+                playAgainLabel!.name = "playAgainLabel"
+                addChild(playAgainLabel!)
+                
+            }
+            gameOver!.isHidden = false
+            
+            
+            playAgainLabel?.isHidden = false
             
             return
         }
@@ -136,4 +155,10 @@ class GameScene: SKScene {
         }
     }
     
+    func playAgain() {
+        numRounds = 0
+        gameOver?.isHidden = true
+        playAgainLabel?.isHidden = true
+        createEnemy()
+    }
 }

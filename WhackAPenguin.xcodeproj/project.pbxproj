@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A774A441E08A316008FF63F /* HitSmokeParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5A774A421E08A316008FF63F /* HitSmokeParticle.sks */; };
+		5A774A451E08A316008FF63F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A774A431E08A316008FF63F /* Assets.xcassets */; };
 		5A9922251E04B32600387EA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9922241E04B32600387EA9 /* AppDelegate.swift */; };
 		5A9922271E04B32600387EA9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5A9922261E04B32600387EA9 /* GameScene.sks */; };
 		5A99222B1E04B32600387EA9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A99222A1E04B32600387EA9 /* GameScene.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A774A421E08A316008FF63F /* HitSmokeParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = HitSmokeParticle.sks; path = Content/HitSmokeParticle.sks; sourceTree = "<group>"; };
+		5A774A431E08A316008FF63F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Content/Assets.xcassets; sourceTree = "<group>"; };
 		5A9922211E04B32600387EA9 /* WhackAPenguin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhackAPenguin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A9922241E04B32600387EA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A9922261E04B32600387EA9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				5A9922591E04B42500387EA9 /* Helper.swift */,
 				5A9922261E04B32600387EA9 /* GameScene.sks */,
 				5A99222A1E04B32600387EA9 /* GameScene.swift */,
+				5A774A421E08A316008FF63F /* HitSmokeParticle.sks */,
+				5A774A431E08A316008FF63F /* Assets.xcassets */,
 				5A99225B1E0602E500387EA9 /* WhackSlot.swift */,
 				5A99223C1E04B42000387EA9 /* Content */,
 				5A99222C1E04B32600387EA9 /* GameViewController.swift */,
@@ -196,9 +202,11 @@
 				5A9922531E04B42000387EA9 /* whackBackground@2x.png in Resources */,
 				5A9922521E04B42000387EA9 /* whackBackground.png in Resources */,
 				5A9922321E04B32600387EA9 /* Assets.xcassets in Resources */,
+				5A774A441E08A316008FF63F /* HitSmokeParticle.sks in Resources */,
 				5A99224E1E04B42000387EA9 /* penguinEvil@2x.png in Resources */,
 				5A99224D1E04B42000387EA9 /* penguinEvil.png in Resources */,
 				5A9922351E04B32600387EA9 /* LaunchScreen.storyboard in Resources */,
+				5A774A451E08A316008FF63F /* Assets.xcassets in Resources */,
 				5A9922581E04B42000387EA9 /* whackMask@2x.png in Resources */,
 				5A9922511E04B42000387EA9 /* whack.caf in Resources */,
 				5A9922501E04B42000387EA9 /* penguinGood@2x.png in Resources */,
@@ -384,6 +392,7 @@
 				5A99223B1E04B32600387EA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
