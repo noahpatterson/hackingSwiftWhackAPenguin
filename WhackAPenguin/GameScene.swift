@@ -19,6 +19,7 @@ class GameScene: SKScene {
             gameScoreLabel.text = "Score: \(score)"
         }
     }
+    var numRounds = 0
     
     
     override func didMove(to view: SKView) {
@@ -55,17 +56,26 @@ class GameScene: SKScene {
             
             for node in tappedNodes {
                 if node.name == "charFriend" {
-                    score += 1
-                    let whackSlot = node.parent!.parent as! WhackSlot
-                    whackSlot.isHit = true
+                  let whackSlot = node.parent!.parent as! WhackSlot
+                    if !whackSlot.isVisible && whackSlot.isHit { continue }
+                    
+                    whackSlot.hit()
+                    score -= 5
+                    
+                    run(SKAction.playSoundFileNamed("whackBad.caf", waitForCompletion: false))
                 } else if node.name == "charEnemy" {
-                    score -= 1
                     let whackSlot = node.parent!.parent as! WhackSlot
-                    whackSlot.isHit = true
+                    if !whackSlot.isVisible && whackSlot.isHit { continue }
+                    
+                    whackSlot.charNode.xScale = 0.85
+                    whackSlot.charNode.yScale = 0.85
+                    
+                    whackSlot.hit()
+                    score += 1
+                    
+                    run(SKAction.playSoundFileNamed("whack.caf", waitForCompletion: false))
                 }
-                
             }
-            
         }
     }
     
@@ -77,6 +87,21 @@ class GameScene: SKScene {
     }
     
     func createEnemy() -> Void {
+        //end game after 30 rounds
+        numRounds += 1
+        if numRounds >= 30 {
+            for slot in slots {
+                slot.hide()
+            }
+            
+            let gameOver = SKSpriteNode(imageNamed: "gameOver")
+            gameOver.position = CGPoint(x: 512, y: 385)
+            gameOver.zPosition = 1
+            addChild(gameOver)
+            
+            return
+        }
+        
         //decrease popup time each time to make the game faster
         popupTime *= 0.991
         
